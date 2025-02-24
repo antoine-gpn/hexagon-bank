@@ -1,0 +1,4 @@
+.idea/
+core/target/
+persistence/target/
+node_modules

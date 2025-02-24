@@ -1,0 +1,26 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  text-align: center;
+}
+
+#body {
+  display: flex;
+  margin: 5%;
+}
+
+#left-bloc {
+  width: 45%;
+}
+
+@media (max-width: 900px) {
+  #body {
+    flex-direction: column;
+  }
+
+  #left-bloc {
+    width: 60%;
+    margin: auto;
+  }
+}

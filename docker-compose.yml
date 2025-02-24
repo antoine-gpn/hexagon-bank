@@ -1,0 +1,58 @@
+services:
+  mysql-db:
+    image: mysql:8.0
+    container_name: mysql-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: exalt
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./mysql-init:/docker-entrypoint-initdb.d
+
+  api:
+    build:
+      context: .
+      dockerfile: api/Dockerfile
+    container_name: api-service
+    restart: always
+    depends_on:
+      - mysql-db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-db:3306/exalt?createDatabaseIfNotExist=true&serverTimezone=UTC
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+    ports:
+      - "8080:8080"
+    volumes:
+      - ~/.m2:/root/.m2
+      - ./api/src:/app/src
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    restart: always
+    depends_on:
+      - mysql-db
+    environment:
+      PMA_HOST: mysql-db
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "8081:80"
+
+  front:
+    build:
+      context: ./front
+      dockerfile: Dockerfile
+    container_name: front-react
+    restart: always
+    ports:
+      - "3000:80"
+    volumes:
+      - ./front:/app
+      - /app/node_modules
+
+volumes:
+  mysql_data:

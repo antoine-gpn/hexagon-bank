@@ -1,0 +1,47 @@
+.transfer {
+    border: solid 1px rgb(78, 78, 78);
+    background-color: rgba(0, 0, 0, 0);
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: 7px 10px 7px 10px;
+    display: flex;
+    margin-bottom: 8px;
+    border-radius: 10px;
+}
+
+.transfer-date {
+    font-size: 0.75em;
+    color: rgb(204, 193, 146);
+}
+
+.deposit {
+    color: #00c93f;
+}
+
+.withdraw {
+    color: #ff4343;
+}
+
+.img {
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+    background-color: rgb(110, 156, 224);
+}
+
+.transfer-text {
+    width: 77%;
+}
+
+.amount {
+    font-style: italic;
+    width: 13%;
+    padding-top: 10px;
+}
+
+@media (max-width: 900px) {
+    .transfer-text {
+        text-align: left;
+        margin-left: 5%;
+    }
+}

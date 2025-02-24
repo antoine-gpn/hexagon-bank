@@ -1,0 +1,25 @@
+#balance {
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    width: 98%;
+    border-radius: 10px;
+    margin: 20px auto;
+    border: solid 2px rgb(121, 121, 121);
+}
+
+#currency {
+    font-size: 0.6em;
+}
+
+#user {
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    width: 98%;
+    margin: auto;
+    border-radius: 10px;
+    border: solid 2px rgb(105, 105, 105);
+}
+
+#user-small {
+    font-size: 0.75em;
+}

@@ -1,0 +1,19 @@
+#history {
+    color: white;
+    width: 45%;
+    margin: 0 auto 15px;
+    border-radius: 10px;
+
+    h2 {
+        text-align: left;
+        margin-left: 2%;
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 900px) {
+    #history {
+        width: 60%;
+        margin-top: 20px;
+    }
+}
